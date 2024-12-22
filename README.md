@@ -6,7 +6,21 @@
 Этот код решает конкретное ТЗ.
 
 ## Запуск проекта
-
+1) **Установите Go.**
+2) **Установите Git.**
+Склонируйте проект с GitHub используя командную строку:
+```
+git clone https://github.com/DinnerDer/iCalc
+```
+Перейдите в папку (Final1lic) проекта, выполните команду:
+```
+go mod tidy
+```
+Запустите сервер:
+```
+go run ./cmd/main.go
+```
+Сервис будет доступен по адресу: [http://localhost:8080/api/v1/calculate](http://localhost:8080/api/v1/calculate)
 Для запуска проекта необходимо в окне терминала ввести одну команду: 
 go run ./main.go
 
@@ -90,20 +104,25 @@ curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: applicatio
 Пример корректного запроса, код:200
 
 git bash
-
+```
 curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
   "expression": "2+2*2"
 }'
+```
 Пример запроса с пустым выражением, код: 422, ошибка:empty expression
-
-curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"\\"}" 
+```
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"\\"}"
+```
 Пример запроса с делением на 0, код: 422, ошибка:division by zero
-
-curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"1/0\\"}" 
+```
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"1/0\\"}"
+```
 Пример запроса с неверным выражением, код: 422, ошибка:invalid expression
-
-curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\\": \\"1++*2\\"}" 
+```
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\\": \\"1++*2\\"}"
+```
 Для запросов можно использовать программу postman
+
 КОНЕЦ README.md
