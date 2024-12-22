@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"github.com/DinnerDer/iCalc/pkg/calc"
+	"github.com/DinnerDer/iCalc/calc"
 )
 
 func calculateHandler(w http.ResponseWriter, r *http.Request) {
