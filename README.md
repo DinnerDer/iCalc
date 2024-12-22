@@ -49,15 +49,16 @@ URL: http://localhost:8080/api/v1/calculate
 {
 "expression": "1 + "
 }
+
 То получим следующее:
-
 {"error": "Internal server error"}
-То есть ошибку 500: Internal Server Error Или например если вставить вот такое выражение:
-
+То есть ошибку 500: 
+Internal Server Error
+Или например если вставить вот такое выражение:
 {
 "expression": "1 / 0"
 }
-То выдаст ошибку 500: Internal server error
----
+То выдаст ошибку 500: 
+Internal server error
 
 КОНЕЦ README.md
