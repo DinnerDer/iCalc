@@ -1,4 +1,5 @@
 # iCalc
+
 Это мой проект по финальному заданию Спринта №1 YandexLyceum.
 Проект носит название iCalc, и представляет из себя сервис подсчёта арифметических выражений.
 Лаконичное решение, без добаления логирования, обработки конкретных ошибок и прочего. 
@@ -38,6 +39,7 @@ URL: http://localhost:8080/api/v1/calculate
 Заголовок: Content-Type: application/json
 И сам пример, который будет приведен ниже.
 Для этого нужен сайт Postman. 
+
 Выберите метод POST, введите URL: http://localhost:8080/api/v1/calculate. 
 Перейдите на вкладку Headers, и добавьте новый заголовок Content-Type: application/json. 
 Потом перейдите во вкладку Body, выберите raw и выберите JSON данные.
@@ -57,13 +59,20 @@ URL: http://localhost:8080/api/v1/calculate
 }
 
 То получим следующее:
-{"error": "Internal server error"}
+
+{
+"error": "Internal server error"
+}
+
 То есть ошибку 500: 
 Internal Server Error
+
 Или например если вставить вот такое выражение:
+
 {
 "expression": "1 / 0"
 }
+
 То выдаст ошибку 500: 
 Internal server error
 
