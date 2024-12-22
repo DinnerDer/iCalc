@@ -76,4 +76,34 @@ Internal Server Error
 То выдаст ошибку 500: 
 Internal server error
 
+## Эндпоинты
+
+POST /api/v1/calculate
+Описание
+Эндпоинт принимает JSON с математическим выражением.
+
+Пример запроса с использованием curl
+Пример для cmd:
+```
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"1\\"}"
+```
+Пример корректного запроса, код:200
+
+git bash
+
+curl --location 'localhost:8080/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": "2+2*2"
+}'
+Пример запроса с пустым выражением, код: 422, ошибка:empty expression
+
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"\\"}" 
+Пример запроса с делением на 0, код: 422, ошибка:division by zero
+
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\": \\"1/0\\"}" 
+Пример запроса с неверным выражением, код: 422, ошибка:invalid expression
+
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d "{\\"expression\\": \\"1++*2\\"}" 
+Для запросов можно использовать программу postman
 КОНЕЦ README.md
