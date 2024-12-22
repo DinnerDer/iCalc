@@ -97,8 +97,8 @@ Internal server error
 
 ## Эндпоинты
 
-POST /api/v1/calculate
-Описание
+***POST /api/v1/calculate***
+
 Эндпоинт принимает JSON с математическим выражением.
 
 Пример запроса с использованием curl
