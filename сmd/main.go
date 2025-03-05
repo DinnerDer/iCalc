@@ -1,7 +1,7 @@
 package main
 
 import (
-	app "https://github.com/DinnerDer/iCalc/internal_application"
+	app "https://github.com/DinnerDer/iCalc/internal/application"
 )
 
 func main() {
